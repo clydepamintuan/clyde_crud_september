@@ -65,7 +65,7 @@
                         <h2>10</h2>
 
                         <a
-                            href="students.html"
+                            href="index.php"
                             class="btn btn-primary btn-sm"
                         >
                             Manage Students
