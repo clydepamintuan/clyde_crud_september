@@ -1,3 +1,19 @@
+<?php
+session_start();
+include "../config/database.php";
+
+if(!isset($_SESSION["role"])|| $_SESSION ["role"] != "admin"){
+    header("Location: ../index.php");
+    exit();
+}
+
+$students = mysqli_query($conn, "SELECT * FROM users WHERE role = 'student'");
+$subjects = mysqli_query($conn, "SELECT * FROM subjects");
+$enrollments = mysqli_query($conn, "SELECT * FROM enrollments");
+
+
+ ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -62,10 +78,10 @@
 
                         <h6>Student Accounts</h6>
 
-                        <h2>10</h2>
+                        <h2><?php echo mysqli_num_rows($students)?></h2>
 
                         <a
-                            href="index.php"
+                            href="students/index.php"
                             class="btn btn-primary btn-sm"
                         >
                             Manage Students
@@ -82,10 +98,10 @@
 
                         <h6>Subjects</h6>
 
-                        <h2>8</h2>
+                        <h2><?php echo mysqli_num_rows($subjects) ?></h2>
 
                         <a
-                            href="subjects.html"
+                            href="subjects/index.php"
                             class="btn btn-primary btn-sm"
                         >
                             Manage Subjects

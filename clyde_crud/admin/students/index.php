@@ -66,7 +66,7 @@ $result = mysqli_query($conn, $sql);
             <div>
                 <h2>Student Accounts</h2>
 
-                <a href="dashboard/dashboard.php">
+                <a href="dashboard.php">
                     ← Dashboard
                 </a>
             </div>
