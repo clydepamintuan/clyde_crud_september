@@ -57,7 +57,7 @@ $result = mysqli_query($conn, $sql);
     <!-- Main Content -->
     <div class="container py-4">
         <?php if(isset ($_GET["message"])){ ?>
-        <div class= "alert alert-success><?php echo $_GET["message"]; ?></div>
+        <div class= "alert alert-success"><?php echo $_GET["message"]; ?></div>
         <?php } ?>
 
         <!-- Header Section -->
@@ -66,7 +66,7 @@ $result = mysqli_query($conn, $sql);
             <div>
                 <h2>Student Accounts</h2>
 
-                <a href="dashboard.php">
+                <a href="../dashboard.php">
                     ← Dashboard
                 </a>
             </div>
@@ -125,11 +125,13 @@ $result = mysqli_query($conn, $sql);
                                     Edit
                                 </a>
 
-                                <button
+                                <a
+                                    href="delete.php?id=<?php echo $row['id']; ?>"
                                     class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Are you sure you want to delete this student?');"
                                 >
                                     Delete
-                                </button>
+                                  </a>
                             </td>
                         </tr>
                         <?php } ?>

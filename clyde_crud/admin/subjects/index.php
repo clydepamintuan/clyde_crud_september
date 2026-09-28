@@ -68,13 +68,13 @@ if (!$result) {
             <div>
                 <h2>Subjects</h2>
 
-                <a href="dashboard.html">
+                <a href="../dashboard.php">
                     ← Dashboard
                 </a>
             </div>
 
             <a
-                href="dashboard.php"
+                href="create.php"
                 class="btn btn-primary"
             >
                 + Add Subject
@@ -116,11 +116,13 @@ if (!$result) {
                                     Edit
                                 </a>
 
-                                <button
+                                <a
+                                    href="delete.php?id=<?php echo $row['id']; ?>"
                                     class="btn btn-danger btn-sm"
+                                    onclick="return confirm('Are you sure you want to delete this student?');"
                                 >
                                     Delete
-                                </button>
+                                  </a>
                             </td>
                         </tr>
                         <?php } ?>
