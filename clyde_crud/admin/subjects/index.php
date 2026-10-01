@@ -110,8 +110,8 @@ if (!$result) {
                             <td><?php echo htmlspecialchars($row["units"]) ?></td>
                             <td>
                                 <a
-                                    href="subject_form.html"
-                                    class="btn btn-warning btn-sm"
+                                     class="btn btn-warning btn-sm"
+                                    href="edit.php?id=<?php echo $row['id']; ?>"
                                 >
                                     Edit
                                 </a>

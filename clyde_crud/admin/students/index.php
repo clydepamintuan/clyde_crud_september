@@ -120,7 +120,8 @@ $result = mysqli_query($conn, $sql);
 
                                 <a
                                     class="btn btn-warning btn-sm"
-                                    href="student_form.html"
+                                    href="edit.php?id=<?php echo $row['id']; ?>"
+                                    
                                 >
                                     Edit
                                 </a>
